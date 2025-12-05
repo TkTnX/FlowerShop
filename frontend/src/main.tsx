@@ -1,18 +1,20 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./shared/styles";
-import { Header } from "./shared";
-import App from "./App";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Header } from "./widgets";
+import { Providers } from "./shared";
+import { Homepage, ProductPage } from "./pages";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <Providers>
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/products/:productId" element={<ProductPage />} />
         </Routes>
       </main>
-    </BrowserRouter>
+    </Providers>
   </StrictMode>
 );

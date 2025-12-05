@@ -1,4 +1,8 @@
 import "./reset.css";
 import "./base.css";
+import "./ui.css"
 import "./header.css";
 import "./hero.css"
+import "./product.css"
+import "./bestSellers.css"
+import "./bigProduct.css"

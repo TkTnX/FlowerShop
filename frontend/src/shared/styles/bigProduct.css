@@ -1,0 +1,41 @@
+.bigProduct {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.bigProduct__left {
+  width: 356px;
+}
+
+.bigProduct__left img {
+  border-radius: 5px;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bigProduct__right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+@media (max-width: 968px) {
+  .bigProduct {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bigProduct__right {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 910px) {
+  .bigProduct__left {
+    width: unset;
+  }
+}

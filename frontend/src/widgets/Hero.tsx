@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
-import { HERO_FLOWERS } from "../data";
+import { HERO_FLOWERS } from "../shared/data";
+import { Button } from "../shared/components";
 
 export const Hero = () => {
   return (
     <section className="hero">
       <div className="container hero__wrapper">
         <div className="hero__left">
-          <h1 className="hero__title">
-            Flowers, 🌻 what the world needs{" "}
-          </h1>
+          <h1 className="hero__title">Flowers, 🌻 what the world needs </h1>
           <p className="hero__desc">Browse between hounders of flowers</p>
-          <Link className="hero__link" to="/catalog">
-            Browse
-          </Link>
+          <Button className="hero__link">
+            <Link to="/catalog">Browse</Link>
+          </Button>
         </div>
         <div className="hero__right">
           {HERO_FLOWERS.map((flower) => (

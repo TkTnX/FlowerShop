@@ -1,5 +1,5 @@
 .hero {
-    margin-top: 73px;
+  margin-top: 73px;
 }
 
 .hero__wrapper {
@@ -20,13 +20,11 @@
 }
 
 .hero__link {
-  display: block;
-  width: fit-content;
   margin-top: 46px;
-  background: var(--main-color);
-  color: #fff;
-  padding: 9px 22px;
-  border-radius: 10px;
+}
+
+.hero__link:hover {
+  opacity: 0.8;
 }
 
 .hero__right {

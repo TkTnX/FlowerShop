@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { NAV_ITEMS } from "../data";
+import { NAV_ITEMS } from "../shared/data";
 
 export const Header = () => {
   const location = useLocation();
