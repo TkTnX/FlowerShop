@@ -57,6 +57,7 @@
   justify-content: space-between;
   width: 30px;
   height: 25px;
+  position: relative;
 }
 
 .header__mobile-btn span {
@@ -64,15 +65,41 @@
   height: 5px;
   background: var(--main-color);
   border-radius: 100px;
+  position: relative;
+  transition: all 0.2s ease-in;
+}
+
+.header__mobile-btn--open span:first-child {
+  transform: translateY(10px) rotate(-45deg);
+}
+.header__mobile-btn--open span:last-child {
+  transform: translateY(-10px) rotate(45deg);
+}
+.header__mobile-btn--open span:nth-child(2) {
+  opacity: 0;
 }
 
 @media (max-width: 640px) {
   .header__nav {
     display: none;
   }
+  .header__nav--mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: #fff;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+  }
 
   .header__mobile-btn {
     display: flex;
+    position: relative;
+    z-index: 2;
   }
 
   .header__logo {

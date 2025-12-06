@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./shared/styles";
 import { Route, Routes } from "react-router-dom";
-import { Header } from "./widgets";
+import { Footer, Header } from "./widgets";
 import { Providers } from "./shared";
 import { Homepage, ProductPage } from "./pages";
 createRoot(document.getElementById("root")!).render(
@@ -15,6 +15,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/shop/:productId" element={<ProductPage />} />
         </Routes>
       </main>
+      <Footer />
     </Providers>
   </StrictMode>
 );

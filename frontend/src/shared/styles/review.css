@@ -33,3 +33,10 @@
   gap: 5px;
   margin-top: 15px;
 }
+
+@media (max-width: 1240px) {
+  .review__image {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
