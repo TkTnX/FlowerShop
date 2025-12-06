@@ -23,7 +23,7 @@ export const BestSellers = () => {
       ) : data.length > 0 ? (
         data.map((product) => <Product key={product.id} product={product} />)
       ) : (
-        <p>Продуктов нет!</p>
+        <p>No products!</p>
       )}
     </Section>
   );

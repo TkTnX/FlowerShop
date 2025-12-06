@@ -21,9 +21,6 @@ export const ProductPage = () => {
     },
   });
 
-  // TODO: Вынести в отдельный компонент этот код ниже
-  // TODO: Закончить страницу products
-
   if (error) return <ErrorMessage error={error} />;
   return (
     <section className="container">
@@ -41,8 +38,7 @@ export const ProductPage = () => {
         {isPending ? (
           <Skeleton width="100%" height="564px" />
         ) : (
-            // TODO: Сделать images[]
-          <MorePhotos images={[data.images]} />
+          <MorePhotos images={data.images} />
         )}
       </div>
     </section>

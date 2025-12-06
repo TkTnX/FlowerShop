@@ -3,7 +3,7 @@ from .models import Review
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ("id", "text", "rating", "user", "product")
+    list_display = ("id", "text", "rating", "user", "product", "created_at")
 
 
 admin.site.register(Review, ReviewAdmin)

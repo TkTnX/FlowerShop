@@ -1,4 +1,5 @@
 .bigProduct {
+  margin-top: 50px;
   display: flex;
   align-items: flex-start;
   gap: 60px;

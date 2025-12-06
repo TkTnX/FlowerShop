@@ -1,7 +1,7 @@
-import { Block } from "../shared";
+import { Block, type ImageType } from "../shared";
 
 interface Props {
-  images: string[];
+  images: ImageType[];
 }
 
 export const MorePhotos = ({ images }: Props) => {
@@ -12,7 +12,7 @@ export const MorePhotos = ({ images }: Props) => {
         {images.map((image, index) => (
           <div className="morePhotos__image" key={index}>
             <img
-              src={`${import.meta.env.VITE_PUBLIC_SERVER_URL}${image}`}
+              src={`${import.meta.env.VITE_PUBLIC_SERVER_URL}${image.image}`}
               alt="Photo"
             />
           </div>

@@ -11,8 +11,8 @@ def get_products(request):
 
     if products is None:
         return Response({"error": "Продукты не найдены!"}, status=404)
-
-    return Response(list(products.values()))
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
 
 
 @api_view(['GET'])
@@ -24,5 +24,3 @@ def get_product(request, pk):
 
     serializer = ProductSerializer(product)
     return Response(serializer.data)
-
-

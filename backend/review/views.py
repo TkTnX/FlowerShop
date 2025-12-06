@@ -7,6 +7,16 @@ from .serializers import ReviewSerializer
 from django.db.models import Avg, Sum
 
 
+@api_view(['GET'])
+def get_three_reviews(request):
+    try:
+        reviews = Review.objects.order_by('-created_at')[:4]
+    except Product.DoesNotExist:
+        return Response({"error": "Отзывы не найдены!"}, status=404)
+
+    serializer = ReviewSerializer(reviews, many=True)
+    return Response(serializer.data)
+
 @api_view(["GET"])
 def get_product_reviews(request, productId):
     try:

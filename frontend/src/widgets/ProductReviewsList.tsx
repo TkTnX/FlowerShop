@@ -13,9 +13,11 @@ export const ProductReviewsList = ({ reviews }: Props) => {
         <button className="productReviews__button">Add a review</button>
       </div>
       <div className="productReviews__list">
-        {reviews.map((review) => (
-          <Review key={review.id} review={review} />
-        ))}
+        {reviews.length > 0 ? (
+          reviews.map((review) => <Review key={review.id} review={review} />)
+        ) : (
+          <p className="productReviews__">Отзывов нет</p>
+        )}
       </div>
     </Block>
   );

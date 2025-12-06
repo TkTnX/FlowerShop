@@ -2,11 +2,13 @@ import type { IReview } from "../shared";
 
 interface Props {
   review: IReview;
+  className?: string;
 }
 
-export const Review = ({ review }: Props) => {
+export const Review = ({ review, className }: Props) => {
+  console.log(review.rating);
   return (
-    <div className="review">
+    <div className={`review ${className}`}>
       <div className="review__image">
         <img
           src={
@@ -23,8 +25,11 @@ export const Review = ({ review }: Props) => {
         <p className="review__username">{review.user.username}</p>
         <p className="review__text">{review.text}</p>
         <div className="review__rating">
-          {[new Array(review.rating)].map((_, index) => (
+          {[...new Array(review.rating)].map((_, index) => (
             <img src="/images/star.svg" key={index} />
+          ))}
+          {[...new Array(5 - review.rating)].map((_, index) => (
+            <img src="/images/star-gray.svg" key={index} />
           ))}
         </div>
       </div>

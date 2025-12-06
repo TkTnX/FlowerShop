@@ -9,7 +9,9 @@ export const ProductDetails = ({ product }: Props) => {
     <Block className="bigProduct">
       <div className="bigProduct__left">
         <img
-          src={`${import.meta.env.VITE_PUBLIC_SERVER_URL}${product.images}`}
+          src={`${import.meta.env.VITE_PUBLIC_SERVER_URL}${
+            product.images[0].image
+          }`}
           alt={product.title}
         />
       </div>
