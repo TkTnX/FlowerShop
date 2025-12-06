@@ -11,7 +11,7 @@ class Review(models.Model):
         5)], help_text="Рейтинг должен быть от 1 до 5", default=0)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Отзыв на {self.product.title} от {self.user.first_name}"

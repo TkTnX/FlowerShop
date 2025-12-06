@@ -1,0 +1,35 @@
+.review {
+  display: flex;
+  align-items: flex-start;
+  gap: 23px;
+}
+
+.review__image {
+  max-width: 77px;
+  max-width: 77px;
+}
+
+.review__image img {
+  object-fit: cover;
+  border-radius: 100%;
+  width: 100%;
+}
+
+.review__username {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.review__text {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--gray-color);
+  margin-top: 10px;
+}
+
+.review__rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+}

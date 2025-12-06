@@ -8,6 +8,11 @@
   color: #fff;
   padding: 9px 22px;
   border-radius: 10px;
+  transition: all 0.1s ease-in;
+}
+
+.button:hover {
+  opacity: 0.8;
 }
 
 .button--outline {
@@ -72,4 +77,18 @@
   100% {
     opacity: 0.3;
   }
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  margin: 50px 0;
+}
+
+.error-message__title {
+  font-size: 32px;
 }

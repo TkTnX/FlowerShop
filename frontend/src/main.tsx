@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")!).render(
       <main>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/products/:productId" element={<ProductPage />} />
+          <Route path="/shop/:productId" element={<ProductPage />} />
         </Routes>
       </main>
     </Providers>

@@ -1,0 +1,39 @@
+.morePhotos {
+  flex: 1;
+}
+
+.morePhotos__title {
+  font-size: 22px;
+}
+
+.morePhotos__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.morePhotos__image img {
+  object-fit: cover;
+  border-radius: 5px;
+  max-width: 243px;
+  max-height: 223px;
+}
+
+@media (max-width: 910px) {
+  .morePhotos {
+    width: 100%;
+  }
+
+  .morePhotos__image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 475px) {
+  .morePhotos__list {
+    display: flex;
+    flex-direction: column;
+  }
+}

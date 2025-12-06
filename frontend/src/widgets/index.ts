@@ -1,3 +1,6 @@
 export * from "./Header"
 export * from './Hero'
 export * from "./BestSellers"
+export * from "./ProductDetails"
+export * from "./ProductReviewsList"
+export * from "./MorePhotos"

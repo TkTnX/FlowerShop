@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Product } from "../entities";
-import { Section } from "../shared/components";
+import { ErrorMessage, Section, Skeleton } from "../shared/components";
 import { axiosInstance, type IProduct } from "../shared";
 
 export const BestSellers = () => {
@@ -8,17 +8,18 @@ export const BestSellers = () => {
     queryKey: ["posts"],
     queryFn: async (): Promise<IProduct[]> => {
       const res = await axiosInstance.get("/products");
-      return res.data
+      return res.data;
     },
   });
 
-  // TODO: ERROR message
-  if (error) return <p>Что-то пошло не так!</p>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <Section className="bestSellers__list" title="Best Sellers">
       {isPending ? (
-        [...new Array(4)].map((_, index) => <div key={index} />)
+        [...new Array(4)].map((_, index) => (
+          <Skeleton width="100%" height="280px" key={index} />
+        ))
       ) : data.length > 0 ? (
         data.map((product) => <Product key={product.id} product={product} />)
       ) : (

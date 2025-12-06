@@ -42,6 +42,8 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 40px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .product__button {

@@ -1,7 +1,6 @@
 .bigProduct {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 60px;
 }
 
@@ -34,8 +33,19 @@
   }
 }
 
+.bigProduct__details {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 36px;
+  gap: 40px;
+}
+
 @media (max-width: 910px) {
   .bigProduct__left {
     width: unset;
+  }
+
+  .bigProduct__details {
+    flex-direction: column;
   }
 }

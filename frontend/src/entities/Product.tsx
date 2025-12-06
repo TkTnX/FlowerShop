@@ -8,7 +8,7 @@ interface Props {
 export const Product = ({ product }: Props) => {
   return (
     <div className="product">
-      <Link to={`/products/${product.id}`} className="product__link" />
+      <Link to={`/shop/${product.id}`} className="product__link" />
       <div className="product__image">
         <img
           src={`${import.meta.env.VITE_PUBLIC_SEVER_MEDIA_URL}${
