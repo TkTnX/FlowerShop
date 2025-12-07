@@ -6,18 +6,19 @@ interface Props {
 }
 
 export const Product = ({ product }: Props) => {
-  console.log(product)
   return (
     <div className="product">
       <Link to={`/shop/${product.id}`} className="product__link" />
-      <div className="product__image">
-        <img
-          src={`${import.meta.env.VITE_PUBLIC_SERVER_URL}${
-            product.images[0].image
-          }`}
-          alt={product.title}
-        />
-      </div>
+      {product.images[0] && (
+        <div className="product__image">
+          <img
+            src={`${import.meta.env.VITE_PUBLIC_SERVER_URL}${
+              product.images[0].image
+            }`}
+            alt={product.title}
+          />
+        </div>
+      )}
       <div className="product__info">
         <div className="product__top">
           <h6 className="product__title">{product.title}</h6>

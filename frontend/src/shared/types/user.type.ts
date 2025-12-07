@@ -8,6 +8,5 @@ export interface IUser {
     last_login: string,
     last_name: string,
     username: string
-    // TODO: ADD AVATAR
     avatar?:string
 }

@@ -42,12 +42,20 @@ INSTALLED_APPS = [
 
     # LIBS
     "rest_framework",
+    "rest_framework.authtoken",
     "corsheaders",
 
     # APPS
     "product.apps.ProductConfig",
     "review.apps.ReviewConfig",
+    "user.apps.UserConfig"
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -67,7 +75,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
-
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -117,6 +124,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = "user.User"
 
 
 # Internationalization

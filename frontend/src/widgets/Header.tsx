@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import { MobileMenu } from "./MobileMenu";
+import { useUser } from "../shared";
 
 export const Header = () => {
+  const { user, isPending } = useUser();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -33,9 +35,15 @@ export const Header = () => {
           </Link>
 
           <div className="header__controls">
-            <Link className="header__control" to={"/profile"}>
-              <img src="/images/user.svg" />
-            </Link>
+            {user && !isPending ? (
+              <Link className="header__control" to={"/profile"}>
+                <img src="/images/user.svg" />
+              </Link>
+            ) : (
+              <Link className="header__control" to={"/auth/login"}>
+                Войти
+              </Link>
+            )}
             <Link className="header__control" to={"/cart"}>
               <img src="/images/cart.svg" />
             </Link>

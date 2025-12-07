@@ -23,7 +23,7 @@ export const Review = ({ review, className }: Props) => {
       </div>
       <div className="review__info">
         <p className="review__username">{review.user.username}</p>
-        <p className="review__text">{review.text}</p>
+        <p className="review__text">{review.text.slice(0, 300)}</p>
         <div className="review__rating">
           {[...new Array(review.rating)].map((_, index) => (
             <img src="/images/star.svg" key={index} />

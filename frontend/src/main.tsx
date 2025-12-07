@@ -4,7 +4,7 @@ import "./shared/styles";
 import { Route, Routes } from "react-router-dom";
 import { Footer, Header } from "./widgets";
 import { Providers } from "./shared";
-import { Homepage, ProductPage } from "./pages";
+import { Homepage, LoginPage, ProductPage, RegisterPage } from "./pages";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Providers>
@@ -13,6 +13,8 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/shop/:productId" element={<ProductPage />} />
+          <Route path="/auth/register" element={<RegisterPage />} />
+          <Route path="/auth/login" element={<LoginPage />} />
         </Routes>
       </main>
       <Footer />

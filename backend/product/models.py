@@ -6,7 +6,7 @@ class Product(models.Model):
     title = models.CharField(max_length=200, help_text="Введите название товара")
     price = models.IntegerField()
     description = models.TextField(max_length=1000, help_text="Введите описание товара")
-    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)], help_text="Рейтинг должен быть от 1 до 5", default=0)
+    rating = models.IntegerField(validators=[ MaxValueValidator(5)], help_text="Рейтинг должен быть от 1 до 5", default=0)
 
     class Meta:
         ordering = ["id"]

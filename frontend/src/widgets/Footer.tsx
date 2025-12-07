@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "../shared";
 
+
+
 export const Footer = () => {
   return (
     <footer className="footer">

@@ -1,0 +1,57 @@
+.authForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+  margin: 50px auto;
+}
+
+.authForm__title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.authForm__form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 400px;
+}
+
+.authForm__form .error-message {
+  margin: 0;
+}
+
+.authForm__input {
+  border: 1px solid var(--gray-color);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.authForm__button {
+  width: 100%;
+}
+
+.authForm__link {
+  font-size: 14px;
+}
+
+.authForm__link a {
+  color: var(--main-color);
+}
+
+.authForm__link a:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+  .authForm {
+    width: unset;
+  }
+  .authForm__form {
+    min-width: unset;
+    width: 100%;
+  }
+}

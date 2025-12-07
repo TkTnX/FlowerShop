@@ -6,6 +6,16 @@
   --bg-color: #f2f2f2;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
