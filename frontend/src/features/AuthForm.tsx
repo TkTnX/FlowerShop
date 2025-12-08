@@ -46,7 +46,6 @@ export const AuthForm = ({ isRegister = false }: Props) => {
     },
   });
 
-
   const onSubmit = (values: RegisterSchema | LoginSchema) => {
     if (user) {
       return navigate("/profile");
@@ -63,13 +62,21 @@ export const AuthForm = ({ isRegister = false }: Props) => {
 
   return (
     <Block className="authForm">
-      <h3 className="authForm__title">
-        {isRegister ? "Регистрация" : "Авторизация"}
-      </h3>
+      <div className="authForm__top">
+        <h3 className="authForm__title">{isRegister ? "Register" : "Login"}</h3>
+        <Link to={"/"}>
+          <img src="/images/home.svg" alt="Home" /> Back to home
+        </Link>
+      </div>
+      <p className="authForm__subtitle">
+        {isRegister
+          ? "Register and help us help you"
+          : "Login and have more fun"}
+      </p>
       <form onSubmit={handleSubmit(onSubmit)} className="authForm__form">
         <input
           disabled={isPending}
-          placeholder="Имя пользователя"
+          placeholder="Username"
           className="authForm__input"
           {...register("username")}
         />
@@ -100,21 +107,25 @@ export const AuthForm = ({ isRegister = false }: Props) => {
         {errors.password && (
           <p className="error-message">{errors.password.message}</p>
         )}
+        <p className="authForm__terms">
+          with registering your accepting our <span>terms</span> and{" "}
+          <span>privacy policy</span>
+        </p>
         <Button
           disabled={isPending}
           type={"submit"}
           className="authForm__button"
         >
-          {isRegister ? "Зарегистрироваться" : "Войти"}
+          {isRegister ? "Register" : "Login"}
         </Button>
         <p className="authForm__link">
           {isRegister ? (
             <>
-              Уже есть аккаунт? <Link to={"/auth/login"}>Войти</Link>{" "}
+              Already have an account? <Link to={"/auth/login"}>Login</Link>{" "}
             </>
           ) : (
             <>
-              Ещё нет аккаунта? <Link to={"/auth/register"}>Регистрация</Link>{" "}
+              Don't have an account? <Link to={"/auth/register"}>Register</Link>{" "}
             </>
           )}
         </p>

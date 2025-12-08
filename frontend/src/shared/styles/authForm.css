@@ -1,15 +1,25 @@
 .authForm {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-direction: column;
   width: fit-content;
-  margin: 50px auto;
+}
+
+.authForm__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .authForm__title {
   font-size: 36px;
   font-weight: 700;
+}
+
+.authForm__subtitle {
+  color: var(--gray-color);
+  margin-top: 10px;
 }
 
 .authForm__form {
@@ -28,6 +38,15 @@
   border: 1px solid var(--gray-color);
   padding: 10px;
   border-radius: 20px;
+}
+
+.authForm__terms {
+  color: var(--gray-color);
+  margin-top: 30px;
+}
+
+.authForm__terms span {
+  color: var(--main-color);
 }
 
 textarea.authForm__input {
@@ -57,5 +76,19 @@ textarea.authForm__input {
   .authForm__form {
     min-width: unset;
     width: 100%;
+  }
+}
+
+.register,
+.login {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  margin: 50px 0;
+}
+@media (max-width: 1024px) {
+  .login__image,
+  .register__image {
+    display: none;
   }
 }

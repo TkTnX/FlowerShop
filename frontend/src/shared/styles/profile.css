@@ -1,0 +1,155 @@
+.profile {
+  margin-top: 83px;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile__side {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid #8383834b;
+  padding: 40px;
+}
+
+.profile__user {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.profile__user-image {
+  max-width: 78px;
+  max-height: 78px;
+  border-radius: 100%;
+}
+
+.profile__user-name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.profile__user-name button {
+  color: var(--gray-color);
+  font-size: 18px;
+}
+
+.profile__navbar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.profile__navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 22px;
+}
+
+.profile__navbar-link--active {
+  color: var(--main-color);
+}
+
+.profile__dashboard {
+  flex: 1;
+  height: 100%;
+}
+
+.profile__top {
+  padding: 27px 40px 30px;
+  border-bottom: 1px solid #8383834b;
+  width: 100%;
+}
+
+.profile__title {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.profile__welcome {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-top: 50px;
+  font-size: 42px;
+  color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+  .profile__navbar-link span {
+    display: none;
+  }
+  .profile__user {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile__side {
+    padding: 10px;
+  }
+  .profile__navigation {
+    width: 100%;
+  }
+  .profile__navbar-list {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__side {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    border-right: none;
+    justify-content: center;
+    border-bottom: 1px solid var(--gray-color);
+  }
+
+  .profile__user {
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .profile__user-name {
+    gap: 0;
+    font-size: 12px;
+  }
+
+  .profile__navigation {
+    width: auto;
+  }
+
+  .profile__user-image {
+    max-width: 40px;
+  }
+
+  .profile__navbar-list {
+    flex-direction: row;
+  }
+
+  .profile__dashboard {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 475px) {
+  .profile__user {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .profile__user-name {
+    align-items: flex-start;
+  }
+}
