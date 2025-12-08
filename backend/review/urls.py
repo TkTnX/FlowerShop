@@ -4,6 +4,6 @@ urlpatterns = [
     path("<int:productId>/", get_product_reviews,
          name="get reviews by product id"),
     path("", get_three_reviews, name="get three reviews"),
-    path("", create_review, name="create review"),
+    path("<int:productId>/create/", create_review, name="create review"),
     path("<int:review_id>/delete/", delete_review, name="delete review")
 ]

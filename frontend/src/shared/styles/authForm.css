@@ -30,6 +30,10 @@
   border-radius: 20px;
 }
 
+textarea.authForm__input {
+  resize: none;
+}
+
 .authForm__button {
   width: 100%;
 }

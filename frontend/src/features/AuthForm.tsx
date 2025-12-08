@@ -46,7 +46,6 @@ export const AuthForm = ({ isRegister = false }: Props) => {
     },
   });
 
-  // TODO: Доделать авторизацию
 
   const onSubmit = (values: RegisterSchema | LoginSchema) => {
     if (user) {

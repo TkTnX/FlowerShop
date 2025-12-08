@@ -13,7 +13,10 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(
         Product, related_name="reviews", on_delete=models.CASCADE)
-    created_at = models.DateField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return f"Отзыв на {self.product.title} от {self.user.first_name}"

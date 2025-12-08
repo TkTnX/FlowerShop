@@ -1,8 +1,7 @@
-from django.shortcuts import render
 from .models import Review, Product, User
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
-from django.contrib.auth.decorators import login_required
+from rest_framework.permissions import IsAuthenticated
 from .serializers import ReviewSerializer
 from django.db.models import Avg, Sum
 
@@ -17,35 +16,36 @@ def get_three_reviews(request):
     serializer = ReviewSerializer(reviews, many=True)
     return Response(serializer.data)
 
+
 @api_view(["GET"])
 def get_product_reviews(request, productId):
     try:
         product = Product.objects.get(pk=productId)
-        reviews = product.review_set.all()
+        reviews = product.review_set.order_by('-created_at')
     except Product.DoesNotExist:
         return Response({"error": "Отзывы не найдены!"}, status=404)
 
     return Response(list(reviews.values()))
 
 
-@login_required
+@permission_classes([IsAuthenticated])
 @api_view(['POST'])
-def create_review(request):
+def create_review(request, productId):
+    data = request.data
     user_id = request.user.id
-    product_id = request.GET.get('product_id')
     user = User.objects.get(id=user_id)
-    product = Product.objects.get(id=product_id)
+    product = Product.objects.get(id=productId)
 
     review = Review.objects.create(
-        text=request.GET.get('text'),
-        rating=request.GET.get('rating'),
+        text=data.get('text'),
+        rating=data.get('rating'),
         user=user,
         product=product
     )
 
     # ПЕРЕСЧЁТ РЕЙТИНГА
 
-    product.rating = product.review_set.aggregate(avg=Avg('rating'))[
+    product.rating = product.reviews.aggregate(avg=Avg('rating'))[
         'avg']
     product.save()
 
