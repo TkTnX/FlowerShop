@@ -44,3 +44,17 @@ def login(request):
 def me(request):
     user = request.user
     return JsonResponse({"user": UserSerializer(user).data})
+
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def edit(request):
+    data = request.data
+    user = request.user
+    print(data)
+    serializer = UserSerializer(user, data=data, partial=True)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=400)
+

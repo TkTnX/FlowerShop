@@ -47,3 +47,33 @@
   gap: 13px 30px;
   flex: 1;
 }
+
+@media (max-width: 1024px) {
+  .profileEdit {
+    padding: 10px;
+  }
+  .profileEdit__form {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 920px) {
+  .profileEdit__form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .profileEdit {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .profileEdit__form {
+    width: 100%;
+  }
+  .profileInfo__top {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

@@ -13,7 +13,7 @@ export const Review = ({ review, className }: Props) => {
         <img
           src={
             review.user.avatar
-              ? `${import.meta.env.VITE_PUBLIC_SERVER_MEDIA_URL}${
+              ? `${import.meta.env.VITE_PUBLIC_SERVER_URL}${
                   review.user.avatar
                 }`
               : "/images/no-avatar.png"

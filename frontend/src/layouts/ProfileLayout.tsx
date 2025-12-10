@@ -12,9 +12,7 @@ export const ProfileLayout = () => {
             className="profile__user-image"
             src={
               user?.avatar
-                ? `${import.meta.env.VITE_PUBLIC_SERVER_MEDIA_URL}${
-                    user.avatar
-                  }`
+                ? `${import.meta.env.VITE_PUBLIC_SERVER_URL}${user.avatar}`
                 : "/images/no-avatar.png"
             }
             alt="Avatar"

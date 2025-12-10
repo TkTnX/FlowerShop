@@ -122,4 +122,9 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.formInput__message {
+  margin: 10px;
+}
+
 /* -- FORM INPUT -- */

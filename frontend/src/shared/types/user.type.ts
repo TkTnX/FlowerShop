@@ -8,5 +8,8 @@ export interface IUser {
     last_login: string,
     last_name: string,
     username: string
-    avatar?:string
+    avatar?: string
+    address?: string
+    phone?: string
+    gender?: string
 }

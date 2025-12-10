@@ -8,3 +8,6 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         exclude = ['password', 'is_superuser']
+        extra_kwargs = {
+            'avatar': {'required': False}
+        }
