@@ -115,3 +115,11 @@
 }
 
 /* -- MODAL -- */
+
+/* FORM INPUT */
+.formInput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* -- FORM INPUT -- */

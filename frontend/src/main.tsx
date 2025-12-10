@@ -8,6 +8,7 @@ import {
   Homepage,
   LoginPage,
   ProductPage,
+  ProfileInfoPage,
   ProfilePage,
   RegisterPage,
 } from "./pages";
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/auth/login" element={<LoginPage />} />
           <Route path="/profile" element={<ProfileLayout />}>
             <Route index element={<ProfilePage />} />
+            <Route path="/profile/info" element={<ProfileInfoPage />} />
           </Route>
         </Routes>
       </main>
