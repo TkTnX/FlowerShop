@@ -10,6 +10,7 @@ import {
   ProductPage,
   ProfileInfoPage,
   ProfilePage,
+  ProfileReviewsPage,
   RegisterPage,
 } from "./pages";
 import { ProfileLayout } from "./layouts";
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/profile" element={<ProfileLayout />}>
             <Route index element={<ProfilePage />} />
             <Route path="/profile/info" element={<ProfileInfoPage />} />
+            <Route path="/profile/reviews" element={<ProfileReviewsPage />} />
           </Route>
         </Routes>
       </main>

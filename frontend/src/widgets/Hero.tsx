@@ -10,7 +10,7 @@ export const Hero = () => {
           <h1 className="hero__title">Flowers, 🌻 what the world needs </h1>
           <p className="hero__desc">Browse between hounders of flowers</p>
           <Button className="hero__link">
-            <Link to="/catalog">Browse</Link>
+            <Link to="/shop">Browse</Link>
           </Button>
         </div>
         <div className="hero__right">

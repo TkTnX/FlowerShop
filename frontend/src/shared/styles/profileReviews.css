@@ -1,0 +1,30 @@
+.profileReviews {
+  flex: 1;
+}
+
+.profileReviews__title {
+  font-size: 28px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--gray-color);
+  padding: 27px 40px 30px;
+  width: 100%;
+}
+
+.profileReviews__list {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.profileReviews__item {
+  border: 1px solid var(--gray-color);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .profileReviews__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

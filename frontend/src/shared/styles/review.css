@@ -34,6 +34,13 @@
   margin-top: 15px;
 }
 
+.review__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--main-color);
+}
+
 @media (max-width: 1240px) {
   .review__image {
     max-width: 40px;

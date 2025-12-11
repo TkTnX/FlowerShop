@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MobileMenu } from "./MobileMenu";
 import { useUser } from "../shared";
+import { LogIn } from "lucide-react";
 
 export const Header = () => {
   const { user, isPending } = useUser();
@@ -41,7 +42,8 @@ export const Header = () => {
               </Link>
             ) : (
               <Link className="header__control" to={"/auth/login"}>
-                Войти
+                <LogIn />
+                Login
               </Link>
             )}
             <Link className="header__control" to={"/cart"}>

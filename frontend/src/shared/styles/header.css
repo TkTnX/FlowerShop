@@ -45,6 +45,10 @@
 
 .header__control {
   transition: all 0.1s ease-in;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--main-color);
 }
 
 .header__control:hover {

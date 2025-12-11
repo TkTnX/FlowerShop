@@ -1,4 +1,6 @@
+import { Link, useLocation } from "react-router-dom";
 import type { IReview } from "../shared";
+import { LinkIcon } from "lucide-react";
 
 interface Props {
   review: IReview;
@@ -6,16 +8,14 @@ interface Props {
 }
 
 export const Review = ({ review, className }: Props) => {
-  console.log(review.rating);
+  const location = useLocation();
   return (
     <div className={`review ${className}`}>
       <div className="review__image">
         <img
           src={
             review.user.avatar
-              ? `${import.meta.env.VITE_PUBLIC_SERVER_URL}${
-                  review.user.avatar
-                }`
+              ? `${import.meta.env.VITE_PUBLIC_SERVER_URL}${review.user.avatar}`
               : "/images/no-avatar.png"
           }
           alt="Avatar"
@@ -33,6 +33,12 @@ export const Review = ({ review, className }: Props) => {
           ))}
         </div>
       </div>
+      {!location.pathname.includes("shop") && (
+        <Link className="review__link" to={`/shop/${review.product}`}>
+          <LinkIcon />
+          Check
+        </Link>
+      )}
     </div>
   );
 };

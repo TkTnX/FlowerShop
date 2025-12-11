@@ -1,9 +1,23 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Block, PROFILE_ITEMS, useUser } from "../shared";
+import { useEffect } from "react";
 
 export const ProfileLayout = () => {
-  const { user } = useUser();
+  const { user, isPending } = useUser();
   const location = useLocation();
+  const navigate = useNavigate();
+  const onLogout = () => {
+    localStorage.removeItem("token");
+    navigate(0);
+  };
+
+  console.log({ user, isPending });
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, [user, isPending, navigate]);
+
   return (
     <Block className="container profile">
       <div className="profile__side">
@@ -23,7 +37,7 @@ export const ProfileLayout = () => {
                 ? `${user.first_name} ${user.last_name}`
                 : user?.username}
             </p>
-            <button>Log out</button>
+            <button onClick={() => onLogout()}>Log out</button>
           </div>
         </div>
         <div className="profile__navigation">

@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import get_product_reviews, create_review, delete_review, get_three_reviews
+from .views import get_product_reviews, create_review, delete_review, get_three_reviews, get_user_reviews
 urlpatterns = [
+    path('user-reviews/', get_user_reviews, name="get user reviews"),
     path("<int:productId>/", get_product_reviews,
          name="get reviews by product id"),
     path("", get_three_reviews, name="get three reviews"),
