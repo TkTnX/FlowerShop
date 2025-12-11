@@ -95,6 +95,13 @@
   }
 }
 
+@media (max-width: 540px) {
+  .product__image {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 485px) {
   .product__controls {
     flex-direction: column;
