@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { Footer, Header } from "./widgets";
 import { Providers } from "./shared";
 import {
+  CartPage,
   Homepage,
   LoginPage,
   ProductPage,
@@ -31,6 +32,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/profile/reviews" element={<ProfileReviewsPage />} />
           </Route>
           <Route path="/shop" element={<ShopPage />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </main>
       <Footer />

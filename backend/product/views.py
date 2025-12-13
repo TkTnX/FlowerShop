@@ -7,7 +7,14 @@ from .serializers import ProductSerializer
 
 @api_view(["GET"])
 def get_products(request):
-    products = Product.objects.all()
+    order_by = request.GET.get('orderBy')
+    title = request.GET.get('title')
+    print(title)
+    products = Product.objects.all().order_by(
+        order_by or 'rating')
+
+    if title:
+        products = products.filter(title__icontains=title)
 
     if products is None:
         return Response({"error": "Продукты не найдены!"}, status=404)

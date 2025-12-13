@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model, authenticate
 from .serializers import UserSerializer
+from cart.services import create_user_cart
 
 User = get_user_model()
 
@@ -21,6 +22,7 @@ def register(request):
     except Exception as e:
         return Response({"error": str(e)}, status=404)
 
+    create_user_cart(newUser)
     token = Token.objects.create(user=newUser)
 
     return Response({"token": token.key})
@@ -45,6 +47,7 @@ def me(request):
     user = request.user
     return JsonResponse({"user": UserSerializer(user).data})
 
+
 @api_view(['PATCH'])
 @permission_classes([IsAuthenticated])
 def edit(request):
@@ -57,4 +60,3 @@ def edit(request):
         serializer.save()
         return Response(serializer.data)
     return Response(serializer.errors, status=400)
-

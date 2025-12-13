@@ -24,7 +24,9 @@ urlpatterns = [
     path('products/', include("product.urls")),
     path("auth/", include("django.contrib.auth.urls")),
     path("reviews/", include("review.urls")),
-    path("users/", include('user.urls'))
+    path("users/", include('user.urls')),
+    path("cart/", include("cart.urls")),
+    path('cart-items/', include('cartItem.urls'))
 ] 
 
 if settings.DEBUG:

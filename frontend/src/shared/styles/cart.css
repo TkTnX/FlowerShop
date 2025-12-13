@@ -1,0 +1,20 @@
+.cart {
+  margin-top: 100px;
+}
+
+.cart__title {
+    font-size: 20px;
+    
+}
+
+.cart__empty {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart__empty img {
+  width: 300px;
+  opacity: 0.3;
+}

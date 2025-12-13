@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import { MobileMenu } from "./MobileMenu";
-import { useUser } from "../shared";
+import {  useUser } from "../shared";
 import { LogIn } from "lucide-react";
+
 
 export const Header = () => {
   const { user, isPending } = useUser();
@@ -16,6 +17,8 @@ export const Header = () => {
       window.document.body.style.overflow = "visible";
     }
   }, [open]);
+
+
 
   return (
     <>

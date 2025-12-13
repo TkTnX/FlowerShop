@@ -10,6 +10,11 @@ export const ShopFilters = () => {
     const formData = new FormData(e.currentTarget);
     const search = formData.get("search");
 
+    if (String(search).length === 0) {
+      searchParams.delete("title");
+      return setSearchParams(searchParams);
+    }
+
     setSearchParams({ ...params, title: search as string });
   };
 
@@ -23,6 +28,7 @@ export const ShopFilters = () => {
     <Block className="shop__filters">
       <form onSubmit={(e) => onSearchChange(e)} className="shop__search">
         <input
+          defaultValue={searchParams.get('title') || ''}
           name="search"
           placeholder="Search..."
           className="shop__input"
@@ -35,14 +41,17 @@ export const ShopFilters = () => {
 
       <label className="shop__sort">
         <SortDesc color="var(--main-color)" />
-        <select onChange={onOrderByChange}>
+        <select
+          defaultValue={searchParams.get("orderBy") || ""}
+          onChange={onOrderByChange}
+        >
           <option value="" selected hidden>
             Order by:
           </option>
-          <option value="price">More expensive</option>
-          <option value="-price">Cheeper</option>
-          <option value="rating">More rated</option>
-          <option value="-rating">Less rated</option>
+          <option value="-price">More expensive</option>
+          <option value="price">Cheeper</option>
+          <option value="-rating">More rated</option>
+          <option value="rating">Less rated</option>
         </select>
       </label>
     </Block>

@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     # APPS
     "product.apps.ProductConfig",
     "review.apps.ReviewConfig",
-    "user.apps.UserConfig"
+    "user.apps.UserConfig",
+    'cart.apps.CartConfig',
+    'cartItem.apps.CartitemConfig'
 ]
 
 REST_FRAMEWORK = {
