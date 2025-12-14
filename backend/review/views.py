@@ -67,8 +67,7 @@ def create_review(request, productId):
 # @login_required
 @api_view(["DELETE"])
 def delete_review(request, review_id):
-    # user_id = request.user.id
-    user_id = 1
+    user_id = request.user.id
     user = User.objects.get(id=user_id)
     review = Review.objects.get(id=review_id)
     if review.user.id != user.id:

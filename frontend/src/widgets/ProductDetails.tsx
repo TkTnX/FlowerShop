@@ -1,3 +1,4 @@
+import { AddToCartButton } from "../features";
 import { Block, Button, type IProduct } from "../shared";
 
 interface Props {
@@ -35,10 +36,7 @@ export const ProductDetails = ({ product }: Props) => {
               <img src="/images/heart.svg" alt="heart" />
               <span>Add to favorite</span>
             </Button>
-            <Button>
-              <img src="/images/cart-light.svg" alt="Cart" />
-              <span>Add to cart</span>
-            </Button>
+            <AddToCartButton productId={product.id} />
           </div>
         </div>
       </div>

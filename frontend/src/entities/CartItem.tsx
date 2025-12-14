@@ -1,10 +1,9 @@
-import { Trash } from "lucide-react";
 import type { ICartItem } from "../shared";
+import { CartItemQuantity, DeleteCartItem } from "../features";
 
 interface Props {
   cartItem: ICartItem;
 }
-// TODO: Доделать функционал корзины (добавление в корзину, удаление из корзины, подсчёт total price, изменение quantity)
 export const CartItem = ({ cartItem }: Props) => {
   const product = cartItem.product;
   return (
@@ -24,18 +23,15 @@ export const CartItem = ({ cartItem }: Props) => {
               {product.description.slice(0, 100)}...
             </p>
           </div>
-          <button className="cartItem__delete">
-            <Trash />
-          </button>
+          <DeleteCartItem cartItemId={cartItem.id} />
         </div>
         <div className="cartItem__bottom">
           <div className="cartItem__price">
             <p className="cartItem__unit">{product.price}$/unit</p>
-            <div className="cartItem__quantity">
-              <button>-</button>
-              <p className="cartItem__quantity-num">{cartItem.quantity}</p>
-              <button>+</button>
-            </div>
+            <CartItemQuantity
+              quantity={cartItem.quantity}
+              cartItemId={cartItem.id}
+            />
           </div>
           <p className="cartItem__total">
             Total {product.price * cartItem.quantity}$

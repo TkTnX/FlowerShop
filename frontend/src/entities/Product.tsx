@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { IProduct } from "../shared";
+import { AddToCartButton } from "../features";
 
 interface Props {
   product: IProduct;
@@ -31,10 +32,7 @@ export const Product = ({ product }: Props) => {
         <div className="product__bottom">
           <p className="product__price">{product.price}$/each</p>
 
-          <button className="product__button">
-            <img src="/images/cart.svg" alt="Cart" />
-            <span>Add to cart</span>
-          </button>
+          <AddToCartButton productId={product.id} />
         </div>
       </div>
     </div>

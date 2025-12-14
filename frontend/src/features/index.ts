@@ -1,3 +1,6 @@
 export * from "./AuthForm"
 export * from "./ProfileEditForm"
 export * from "./ShopFilters"
+export * from "./AddToCartButton"
+export * from "./CartItemQuantity"
+export * from "./DeleteCartItem"

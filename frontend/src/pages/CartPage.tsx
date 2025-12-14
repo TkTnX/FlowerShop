@@ -12,7 +12,6 @@ export const CartPage = () => {
   });
 
   if (error) return <ErrorMessage error={error} />;
-  console.log(data);
   return (
     <>
       {isPending ? (
