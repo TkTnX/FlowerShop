@@ -1,3 +1,5 @@
+import type { IFavorite } from "./favorite.type"
+
 export interface IUser {
     date_joined: string,
     email: string,
@@ -12,4 +14,5 @@ export interface IUser {
     address?: string
     phone?: string
     gender?: string
+    favorites: IFavorite[]
 }

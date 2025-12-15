@@ -1,4 +1,5 @@
-import { Block, Button, type ICart } from "../shared";
+import { CheckoutButton } from "../features";
+import { Block, type ICart } from "../shared";
 import { CartItem } from "./CartItem";
 
 interface Props {
@@ -23,7 +24,7 @@ export const Cart = ({ cart }: Props) => {
               Subtotal for {cart.cartItems.length} items:{" "}
               <b>{cart.totalPrice}$</b>
             </h5>
-            <Button className="cart__checkout">Checkout</Button>
+           <CheckoutButton />
           </Block>
         </>
       ) : (

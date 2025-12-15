@@ -72,3 +72,16 @@ def delete_cart_item(request, cartItemId):
     cart_item.delete()
     cart.save()
     return Response("Success")
+
+
+@permission_classes(IsAuthenticated)
+@api_view(['DELETE'])
+def clear_cart(request):
+    user = request.user
+    cart = get_object_or_404(Cart, user=user)
+    cart_items = CartItem.objects.filter(cart=cart)
+    cart_items.delete()
+    cart.totalPrice = 0
+    cart.save()
+
+    return Response('Success')

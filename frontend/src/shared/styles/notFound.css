@@ -1,0 +1,18 @@
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: calc(100vh - 300px);
+  gap: 20px;
+}
+
+.notFound__title {
+  font-size: 128px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.notFound__subtitle {
+  font-size: 32px;
+}

@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     "review.apps.ReviewConfig",
     "user.apps.UserConfig",
     'cart.apps.CartConfig',
-    'cartItem.apps.CartitemConfig'
+    'cartItem.apps.CartitemConfig',
+    'favoriteItem.apps.FavoriteitemConfig'
 ]
 
 REST_FRAMEWORK = {

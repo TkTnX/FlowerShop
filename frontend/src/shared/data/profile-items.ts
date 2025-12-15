@@ -6,10 +6,10 @@ export const PROFILE_ITEMS = [
     iconFilled: "/images/dashboard-filled.svg",
   },
   {
-    name: "Orders",
-    href: "/profile/orders",
-    icon: "/images/orders.svg",
-    iconFilled: "/images/orders-filled.svg",
+    name: "Favorites",
+    href: "/profile/favorites",
+    icon: "/images/heart-gray.svg",
+    iconFilled: "/images/heart.svg",
   },
   {
     name: "My information",

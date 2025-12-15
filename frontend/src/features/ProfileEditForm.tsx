@@ -10,6 +10,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, type Ref } from "react";
 import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-toastify";
 
 interface Props {
   formRef: Ref<HTMLFormElement>;
@@ -40,7 +41,7 @@ export const ProfileEditForm = ({ formRef }: Props) => {
       const formData = new FormData();
 
       for (const key in values) {
-        const type = key as keyof EditProfileSchema
+        const type = key as keyof EditProfileSchema;
         if (values[type] !== undefined) {
           formData.append(key, values[type]);
         }
@@ -51,6 +52,12 @@ export const ProfileEditForm = ({ formRef }: Props) => {
       });
 
       return res.data;
+    },
+    onSuccess: () => {
+      toast.success("Updated!");
+    },
+    onError: (error) => {
+      toast.error(error.message);
     },
   });
 

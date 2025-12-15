@@ -20,9 +20,11 @@
 }
 
 .profile__user-image {
-  max-width: 78px;
-  max-height: 78px;
+  width: 78px;
+  height: 78px;
+  min-width: 78px;
   border-radius: 100%;
+  object-fit: cover;
 }
 
 .profile__user-name {
@@ -150,5 +152,9 @@
   }
   .profile__user-name {
     align-items: flex-start;
+  }
+  .profile__user-image {
+    min-width: unset;
+    height: 40px;
   }
 }

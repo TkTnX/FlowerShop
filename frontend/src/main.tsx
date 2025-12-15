@@ -8,7 +8,9 @@ import {
   CartPage,
   Homepage,
   LoginPage,
+  NotFoundPage,
   ProductPage,
+  ProfileFavoritesPage,
   ProfileInfoPage,
   ProfilePage,
   ProfileReviewsPage,
@@ -30,9 +32,14 @@ createRoot(document.getElementById("root")!).render(
             <Route index element={<ProfilePage />} />
             <Route path="/profile/info" element={<ProfileInfoPage />} />
             <Route path="/profile/reviews" element={<ProfileReviewsPage />} />
+            <Route
+              path="/profile/favorites"
+              element={<ProfileFavoritesPage />}
+            />
           </Route>
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />

@@ -1,5 +1,5 @@
-import { AddToCartButton } from "../features";
-import { Block, Button, type IProduct } from "../shared";
+import { AddToCartButton, AddToFavorites } from "../features";
+import { Block, type IProduct } from "../shared";
 
 interface Props {
   product: IProduct;
@@ -32,10 +32,7 @@ export const ProductDetails = ({ product }: Props) => {
           <p>{product.price}$ / each</p>
 
           <div className="product__controls">
-            <Button variant={"outline"}>
-              <img src="/images/heart.svg" alt="heart" />
-              <span>Add to favorite</span>
-            </Button>
+            <AddToFavorites productId={product.id} />
             <AddToCartButton productId={product.id} />
           </div>
         </div>
